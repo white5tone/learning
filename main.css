@@ -1,0 +1,90 @@
+body {
+    background-color: dimgray;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: white;
+    font-family: verdana;
+}
+
+p{
+    font-family: helvetica;
+    border: 1px solid orange;
+    padding: 30px;
+    margin: 30px;
+}
+a:link {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: orange;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+button {
+    background-color: red;
+    font-family: helvetica;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+button:hover {
+    background-color: orange;
+}
+button:active {
+    background-color: yellow;
+}
+/* using classes and id's */
+#centeredText {
+    font-family: helvetica;
+    border: 0px;
+    padding: 30px;
+    margin: 0px;
+    text-align: center;
+}
+div {
+    display: block;
+    background-color: blue;
+}
+div.DivClass1 {
+    transition: all .3s ease-in;
+    display: block;
+    background-color:  aqua;
+    margin: 0.5%;
+    width: 32%;
+    height: 50%;
+    float: left;
+}
+div.DivClass2 {
+    transition: all .3s ease-in;
+    display: block;
+    background-color:  greenyellow;
+    margin: 0.5%;
+    width: 32%;
+    height: 50%;
+    float: left;
+}
+div.DivClass3 {
+    transition: all .3s ease-in;
+    display: block;
+    background-color:  red;
+    margin: 0.5%;
+    width: 32%;
+    height: 50%;
+    float: left;
+}
+div.DivClass1:hover,div.DivClass2:hover,div.DivClass3:hover {
+    background-color: white;
+}
