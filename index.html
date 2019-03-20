@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <h1>HTML Elements</h1>
+        <h1 id="top">HTML Elements</h1>
         <ul>
             <li>
                 <h2>Headers</h2>
@@ -31,27 +31,65 @@
             </li>
             <li>
                 <h2>Links</h2>
-                <p>There is a link below;<br><a href="https://www.github.com">Github</a></p>
+                <p>There is a link below;
+                    <br>
+                    <a href="https://www.github.com" target="_blank">Github</a>
+                    <br>
+                    <a href="#top">Go to top</a>
+                </p>
                 
             </li>
             <li>
                 <h2>Buttons</h2>
-                <p>This is a Button.
+                <div style="width: 90%; height: 70px;padding: 5%;">
+                    <p style="border: 0px; padding: 0px; margin: 0px;">This is a Button.</p>
                     <br>
-                    <button>Click Me</button>
-                </p>
+                    <script>
+                    function buttonClicked() {
+                        document.getElementById("buttonMessage").textContent = "You clicked the button!";
+                        document.getElementById("buttonMessage").style.color = "red";
+                    }
+                </script>
+                    <button style="float: left;" type="button" onclick="buttonClicked()">Click Me</button>
+                    <p id="buttonMessage" style="float: left; margin: 0px; padding: 0px; padding-top: 5px; border: 0px; text-align: center; width: 70%; height: 30px;">Button Message</p>
+                </div>
             </li>  
+            <li>
+                <h2 style="clear: left;">Tables</h2>
+                <table style="width:100%;">
+                    <tr style="width:100%;">
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Sex</td>
+                    </tr>
+                    <tr style="width:100%;">
+                        <td>Bati</td>
+                        <td>20</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr style="width:100%;">
+                        <td>Ayşe</td>
+                        <td>37</td>
+                        <td>Female</td>
+                    </tr>
+                    <tr style="width:100%;">
+                        <td>Ali</td>
+                        <td>63</td>
+                        <td>Male</td>
+                    </tr>
+                </table>
+            </li>
         </ul>
         <!-- use a line like this to leave comments -->
         <h2>Using ID's and Classes</h2>
         <div class="DivClass1">
-            <p id="centeredText">Class 1</p>
+            <p id="centeredText" class="divText">Class 1</p>
         </div>
         <div class="DivClass2">
-            <p id="centeredText">Class 2</p>
+            <p id="centeredText" class="divText">Class 2</p>
         </div>
         <div class="DivClass3">
-            <p id="centeredText">Class 3</p>
+            <p id="centeredText" class="divText">Class 3</p>
         </div>
         
     </body>

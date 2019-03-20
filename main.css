@@ -46,6 +46,16 @@ button:hover {
 button:active {
     background-color: yellow;
 }
+table, th, td {
+    background-color: aliceblue;
+    border: 1px solid black;
+    font-family: helvetica;
+    text-align: center;
+}
+td{
+    width: 33%;
+    padding: 10px;
+}
 /* using classes and id's */
 #centeredText {
     font-family: helvetica;
@@ -87,4 +97,10 @@ div.DivClass3 {
 }
 div.DivClass1:hover,div.DivClass2:hover,div.DivClass3:hover {
     background-color: white;
+}
+p.divText {
+    transition: all .3s ease-in;
+}
+p.divText:hover {
+    color: blue;
 }
