@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                text-align: right;
+                padding: 50px;
+                padding-bottom: 10px;
+                font-family: "Comic Sans MS";
+                font-size: 60px;
+            }
+            h3 {
+                text-align: right;
+                padding: 30px;
+                font-family: "Comic Sans MS";
+                margin-right: 100px;
+            }
+            p {
+                font-family: arial;
+                color: black;
+                margin: 20px;
+            }
+            input {
+                float: left;
+                margin: 20px;
+                width: 20vw;
+                font-family: helvetica;
+            }
+            button {
+                margin: 20px;
+                width: 90%;
+            }
+            div.box {
+                margin-top: 50px;
+                background-color: gainsboro;
+                padding: 20px;
+            }
+            div.ppBorder{
+                float: right;
+                background-color: black;
+                clip-path: circle();
+                width: 100px;
+                height: 100px;
+            }
+            img.pp {
+                display: inline-block;
+                clip-path: circle();
+                width: 92px;
+                height: 92px;
+                margin: 4px;
+            }
+            @media screen and (max-width:600px) {
+                .resItem {
+                    width: 90%;
+                }
+            }
+        </style>
+        <script>
+            function getCard() {
+                var name = document.getElementById("nameIn").value;
+                var title = document.getElementById("titleIn").value;
+                var article = document.getElementById("articleIn").value;
+                
+                document.getElementById("nameOut").innerHTML = "-"+" "+name;
+                document.getElementById("titleOut").innerHTML = '"'+title+'"';
+                document.getElementById("articleOut").innerHTML = article;
+                        
+                document.getElementById("theForm").style.display = "none";
+                document.getElementById("articleCard").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <form id="theForm">
+            <fieldset>
+                <legend>
+                    <p>Fill the information to post an article.</p>
+                </legend>
+                <p class="resItem" style="float: left;">Your Name:</p>
+                <input id="nameIn" class="resItem" type="text" name="name">
+                <p class="resItem" style="float: left;">Title:</p>
+                <input id="titleIn" class="resItem" type="text" name="title">
+                <p style="padding-top: 40px; padding-bottom: 0px; clear: left;">Write your article:</p>
+                <input id="articleIn" type="text" name="article" style="margin-top:-15px;width: 90%;height: 200px">
+                <button onclick="getCard(); return false;"><p style="font-size: 20px">Send your article</p></button>
+            </fieldset>
+        </form>
+        <div id="articleCard" class="box" style="display: none;">
+            <h1 id="titleOut" >"Title"</h1>
+            <p id="articleOut" style="font-size: 15px; font-family: monospace; margin-right: 25%;">Article</p>
+            <div class="ppBorder">
+                <img class="pp" src="http://www.cocodibu.de//wp-content/uploads/2013/11/Christian_Profil.png">
+            </div>
+            <h3 id="nameOut" >- Your Name</h3>
+        </div>
+    </body>
+</html>
+
+<!-- use the image later 
+
+<img src="http://www.cocodibu.de//wp-content/uploads/2013/11/Christian_Profil.png" style="width: 100px;">
+
+-->
