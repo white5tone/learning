@@ -1,0 +1,206 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: helvetica;
+            }
+            
+            .tablink {
+                background-color: #f2f2f2;
+                color: black;
+                float:left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 20px;
+                width: 25%;
+            }
+            
+            .tablink:hover {
+                background-color: #e6e6e6;
+            }
+            
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 100px 50px 100px 50px;
+                height: 100%;
+            }
+            .image {
+                width: 49%;
+                height: 25vw;
+                float: left;
+                border-radius: 5px;
+                margin: 2px;
+            }
+            .imagePreview {
+                width: 80%;
+                height: 80%;
+                border-radius: 10px;
+            }
+            .footer {
+                width: 100%-30px;
+                padding: 15px 30px 15px 30px;
+                text-align: right;
+                font-family: helvetica;
+                font-size: 15px;
+                color: black;
+                background-color: #f2f2f2;
+            }
+            
+            #Mountains {background-color:darkkhaki;}
+            #Forests {background-color: darkgreen;}
+            #Seas {background-color: skyblue;}
+            #Space {background-color: blueviolet;}
+            
+            .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.8);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+            
+            .overlay-content {
+                position: relative;
+                top: 10%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+            
+            .closeButton {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+                font-family: helvetica;
+                padding: 8px;
+                text-decoration: none;
+                color: #f2f2f2;
+                display: block;
+                transition: 0.3s;
+            }
+            .closeButton:hover {
+                #f1f1f1;
+            }
+    
+            @media screen and (max-width:600px) {
+                .image {
+                    width: 100%;
+                    height: auto;
+                    float: none;
+                }
+                .tabcontent {
+                    height: auto;
+                    padding-top: 200px;
+                }
+                .footer {
+                    text-align: center;
+                }
+                .tablink {
+                    width: 100%;
+                }
+                #tabs {
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <button id="defaultOpen" class="tablink" onclick="openPage('Mountains', this,'darkkhaki')">Mountains</button>
+        <button id="tabs" class="tablink" onclick="openPage('Forests',this,'darkgreen')">Forests</button>
+        <button id="tabs" class="tablink" onclick="openPage('Seas',this,'skyblue')">Seas</button>
+        <button id="tabs" class="tablink" onclick="openPage('Space',this,'blueviolet')">Space</button>
+        
+        <div id="Mountains" class="tabcontent">
+            <h3>Mountains</h3>
+            <p>Beautiful mountain photos.</p>
+            <img onclick="showImage(this)" class="image" src="https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/f24b4a7bf9f24d1ba5f899339e6949f3">
+            <img onclick="showImage(this)" class="image" src="https://fthmb.tqn.com/8dITOBdE6voJItK_Qfzdx_z1Fuc=/2800x1862/filters:fill(auto,1)/peak-of-mount-everest-above-clouds-in-tibet-140461422-59a064ec519de20010d882b9.jpg">
+            <img onclick="showImage(this)" class="image" src="https://i.ytimg.com/vi/tog3dRQxENs/maxresdefault.jpg">
+            <img onclick="showImage(this)" class="image" src="https://www.worldatlas.com/upload/66/14/d8/kangchenjunga.jpg">
+        </div>
+        
+        <div id="Forests" class="tabcontent">
+            <h3>Forests</h3>
+            <p>Forests where you can breathe.</p>
+            <img onclick="showImage(this)" class="image" src="https://www.forest-trends.org/wp-content/uploads/2017/04/acadia_np_622419-High-Res.jpg">
+            <img onclick="showImage(this)" class="image" src="https://cdn.pixabay.com/photo/2018/06/02/17/50/forest-3448818__340.jpg">
+            <img onclick="showImage(this)" class="image" src="https://www.discovertheforest.org/wp-content/uploads/2018/01/01.jpg">
+            <img onclick="showImage(this)" class="image" src="https://parivesh.nic.in/singlewindow_css/images/img-forest.jpg">
+        </div>
+        
+        <div id="Seas" class="tabcontent">
+            <h3>Seas</h3>
+            <p>Visuals from fresh seas.</p>
+            <img onclick="showImage(this)" class="image" src="https://wallpapercave.com/wp/af8m9MM.jpg">
+            <img onclick="showImage(this)" class="image" src="https://www.pixelstalk.net/wp-content/uploads/2016/03/Sunset-nature-sea-wallpaper-HD.jpg">
+            <img onclick="showImage(this)" class="image" src="https://cdn.allwallpaper.in/wallpapers/1920x1080/5033/beaches-scenic-sea-1920x1080-wallpaper.jpg">
+            <img onclick="showImage(this)" class="image" src="http://doanarae.com/doanarae/8404-sea-wallpapers-hd_16318.jpg">
+        </div>
+        
+        <div id="Space" class="tabcontent">
+            <h3>Space</h3>
+            <p>Exploring the unknown.</p>
+            <img onclick="showImage(this)" class="image" src="https://newevolutiondesigns.com/images/freebies/space-wallpaper-16.jpg">
+            <img onclick="showImage(this)" class="image" src="https://wallpapershome.com/images/pages/ico_h/16848.jpg">
+            <img onclick="showImage(this)" class="image" src="http://s1.picswalls.com/wallpapers/2014/02/19/latest-space-wallpaper_110926700_30.jpg">
+            <img onclick="showImage(this)" class="image" src="https://wallpaperplay.com/walls/full/2/5/0/200799.jpg">
+        </div>
+        
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
+            
+            <div class="overlay-content">
+                <img id="preview" class="imagePreview" src="">
+            </div>
+
+        </div>
+        <div class="footer">Bati Aktas 2019</div>
+        <script>
+            function openPage(pageName, elmnt, color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++){
+                    tabcontent[i].style.display = "none";   
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                    tablinks[i].style.color = "black";
+                    tablinks[i].id="tabs";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = color;
+                elmnt.style.color = "white";
+                elmnt.id = "defaultOpen";
+            }   
+            
+            document.getElementById("defaultOpen").click();
+            
+            function showImage(elmnt) {
+                /* SHOW IMAGE*/
+                document.getElementById("preview").src = elmnt.src;
+                document.getElementById("myNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+        
+    </body>
+</html>

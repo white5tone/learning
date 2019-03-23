@@ -9,9 +9,16 @@
             <h2 onclick="openMenu()">Mountains</h2>
             <script>
             function openMenu() {
-                document.getElementById("mi2").style.display = "block";
-                document.getElementById("mi3").style.display = "block";
-                document.getElementById("mi4").style.display = "block";
+                if (document.getElementById("mi2").style.display === "block") {
+                    document.getElementById("mi2").style.display = "none";
+                    document.getElementById("mi3").style.display = "none";
+                    document.getElementById("mi4").style.display = "none";
+                }
+                else {
+                    document.getElementById("mi2").style.display = "block";
+                    document.getElementById("mi3").style.display = "block";
+                    document.getElementById("mi4").style.display = "block";
+                }
             }
         </script>
         </div>

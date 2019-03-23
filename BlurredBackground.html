@@ -1,0 +1,54 @@
+<html>
+    <head></head>
+    
+    <style>
+        body, html {
+            height: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .bgImage {
+            background-image: url(mountains.jpg);
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: 110%;
+            height: 120%;
+            margin: -30px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .bgContent {
+            background-color: rgba(0,0,0, 0.2);
+            color: white;
+            font-weight: bold;
+            border: 3px solid black;
+            border-radius: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1, p {
+            font-family: helvetica;
+        }
+    </style>
+    
+    <body>
+        <div class="bgImage"></div>
+        
+        <div class="bgContent">
+            <h1> This is the title.</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+    </body>
+</html>

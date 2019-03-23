@@ -1,0 +1,130 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <style>
+        body {
+            margin: 0px;
+            background-color: black;
+        }
+        
+        h1, p {
+            text-align: center;
+            font-family: helvetica;
+        }
+        
+        div.header {
+            background-color: dimgray;
+            width: 100%;
+            padding: 1px;
+        }
+        
+        div.contentHolder {
+            background-color: antiquewhite;
+            width: calc((100%)-40px);
+            padding: 40px;
+            margin: 0px;
+        }
+        
+        .accordion {
+            background-color: dimgray;
+            color: white;
+            cursor:pointer;
+            padding: 20px;
+            width: 100%;
+            font-family: helvetica;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        
+        .accordion:hover, .active{
+            background-color: slategray;
+        }
+            
+        .panel {
+            padding:0;
+            text-align: center;
+            font-family: courier;
+            overflow: hidden;
+            background-color:burlywood;
+            max-height: 0;
+            transition: all 0.2s ease-out;
+        }
+            .menuBottom {
+            background-color: dimgray;
+            color: white;
+            cursor:default;
+            padding: 20px;
+            width: 100%;
+            font-family: helvetica;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+                border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;
+        }
+            .menuTop {
+            background-color: dimgray;
+            color: white;
+            cursor:default;
+            padding: 20px;
+            width: 100%;
+            font-family: helvetica;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+                border-top-left-radius: 30px; border-top-right-radius: 30px;
+        }
+        </style>
+        
+    </head>
+    
+    <body>
+        <div class="header">
+            
+            <h1>Accordion Practice</h1>
+            
+        </div>
+        
+        <div class="contentHolder">
+            
+            <button class="menuTop"></button>
+            
+            <button class="accordion">Section 1</button>
+            <div class="panel">Content</div>
+            
+            <button class="accordion">Section 2</button>
+            <div class="panel">Content</div>
+            
+            <button  class="accordion">Section 3</button>
+            <div class="panel">Content</div>
+            
+            <button class="menuBottom"></button>
+            
+            <script>
+                
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+        
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click",function(){
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                        panel.style.padding = "0px";
+                    }else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        panel.style.padding = "20px";
+                }
+                    })
+                
+                }
+        </script>
+
+        </div>
+    </body>
+</html>

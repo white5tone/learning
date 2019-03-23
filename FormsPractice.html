@@ -21,15 +21,34 @@
                 color: black;
                 margin: 20px;
             }
+            legend {
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 20px;
+            }
             input {
                 float: left;
                 margin: 20px;
                 width: 20vw;
                 font-family: helvetica;
+                border: 1px solid gray;
+                border-radius: 4px;
+            }
+            textarea {
+                margin: 20px; 
+                margin-top: -15px; 
+                width: 90%;
+                border: 1px solid black;
+                border-radius: 10px;
             }
             button {
                 margin: 20px;
                 width: 90%;
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+            fieldset {
+                background-color: gainsboro;
             }
             div.box {
                 margin-top: 50px;
@@ -50,6 +69,10 @@
                 height: 92px;
                 margin: 4px;
             }
+            .blur {
+                -webkit-filter: blur(10px);
+                filter: blur(10px);
+            }
             @media screen and (max-width:600px) {
                 .resItem {
                     width: 90%;
@@ -61,19 +84,22 @@
                 var name = document.getElementById("nameIn").value;
                 var title = document.getElementById("titleIn").value;
                 var article = document.getElementById("articleIn").value;
-                
-                document.getElementById("nameOut").innerHTML = "-"+" "+name;
-                document.getElementById("titleOut").innerHTML = '"'+title+'"';
-                document.getElementById("articleOut").innerHTML = article;
-                        
-                document.getElementById("theForm").style.display = "none";
-                document.getElementById("articleCard").style.display = "block";
+                if ((name=="")||(title=="")||(article=="")) {
+                    alert("MISSING INFORMATION!");
+                }
+                else {
+                    document.getElementById("nameOut").innerHTML = "-"+" "+name;
+                    document.getElementById("titleOut").innerHTML = '"'+title+'"';
+                    document.getElementById("articleOut").innerHTML = article;    
+                    document.getElementById("theForm").style.display = "none";
+                    document.getElementById("articleCard").style.display = "block";
+                }
             }
         </script>
     </head>
     <body>
         <form id="theForm">
-            <fieldset>
+                <fieldset>
                 <legend>
                     <p>Fill the information to post an article.</p>
                 </legend>
@@ -82,7 +108,7 @@
                 <p class="resItem" style="float: left;">Title:</p>
                 <input id="titleIn" class="resItem" type="text" name="title">
                 <p style="padding-top: 40px; padding-bottom: 0px; clear: left;">Write your article:</p>
-                <input id="articleIn" type="text" name="article" style="margin-top:-15px;width: 90%;height: 200px">
+                <textarea id="articleIn" name="paragraph_text" cols="50" rows="10">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</textarea>
                 <button onclick="getCard(); return false;"><p style="font-size: 20px">Send your article</p></button>
             </fieldset>
         </form>
